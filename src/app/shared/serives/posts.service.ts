@@ -15,16 +15,17 @@ export class PostsService {
   }
 
   fetchAllPosts(): Observable<Ipost[]> {
-    let httpHeaders = new HttpHeaders({
-      'content-type': 'application/json',
-      'Authorization': 'Bearer Token qwerty'
-    })
-    let searchparams = new HttpParams();
-    searchparams.append("pageNo", 10)
-    return this.http.get<Ipost[]>(this.baseUrl, {
-      headers: httpHeaders,
-      params : searchparams
-    })
+    // let httpHeaders = new HttpHeaders({
+    //   'content-type': 'application/json',
+    //   'Authorization': 'Bearer Token qwerty'
+    // })
+    // let searchparams = new HttpParams();
+    // searchparams.append("pageNo", 10)
+    // return this.http.get<Ipost[]>(this.baseUrl, {
+    //   headers: httpHeaders,
+    //   params : searchparams
+    // })
+     return this.http.get<Ipost[]>(this.baseUrl)
   }
   deletePost(id: number) {
     let deleteUrl = `${this.baseUrl}/${id}`
