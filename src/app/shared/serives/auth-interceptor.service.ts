@@ -12,7 +12,7 @@ export class AuthInterceptorService implements HttpInterceptor {
     console.log(`Using HttpInterceptor for all api`);
     let httpheader = new HttpHeaders({
       'content-type': 'application/json',
-      'Authorization': 'JWT token'
+      'Authorization': localStorage.getItem('setToken')!
     })
     let reqClone = req.clone({
       headers: httpheader
